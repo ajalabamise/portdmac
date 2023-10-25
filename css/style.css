@@ -1,0 +1,499 @@
+:root{
+    --navbarcolor:#ff9814
+    
+    --green: #27ae60;
+    --green2: #008000;
+    --black: #444;
+    --grey: #666;
+    --grey2: #333;
+    --red: rgb(124, 9, 9);
+    --light-color: #777;
+    --bg-color1: #fff;
+    --bg-color2: #e6e6e6;
+    --bg-color3: #eee;
+    --border: 1rem solid rgba(0,0,0,0.3);
+    --box-shadow1: 0 .2rem .3rem rgba(0,0,0,.3);
+    --box-shadow2: .5rem .5rem 1rem #ccc,
+                -.5rem .5rem 1rem #fff;
+    --box-shadow-inset: .5rem .5rem 1rem #ccc inset,
+                -.5rem .5rem 1rem #fff inset;
+}
+
+*{
+    margin: 0px; padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* .navbar ul li a{
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+} */
+
+/* when user highlight the page */
+*::selection{
+    background: var(--navbarcolor);
+    color: #fff;
+}
+
+html{
+    font-size: 64%;
+    overflow-x: hidden;
+}
+
+/* header css */
+header{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    background: var(--bg-color1);
+    box-shadow: var(--box-shadow1);
+    width: 100%;
+}
+
+header .heading{
+    font-size: 3rem;
+    color: var(--grey);
+    padding: 1rem;
+    text-align: center;
+}
+
+header #menu{
+    font-size: 3rem;
+    color: var(--grey);
+    cursor: pointer;
+    margin: 1rem;
+    /* it reveals the hamburger */
+    /* display: block; */
+    /* it hides the hamburger */
+    display: none;
+}
+
+header .navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    background: var(--green2);
+    padding: 1rem;
+}
+
+header .navbar ul li{
+    margin: 0 2rem;
+}
+
+header .navbar ul li a{
+    font-size: 2rem;
+    color: var(--bg-color1);
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+header .navbar ul li a:hover{
+    color: yellow;
+}
+
+/* code not to be repeated DRY - dont repeat yourself; KISS - keep it simple stupid*/
+section{
+    /* to make it pull down from the nav bar where hidden*/
+    padding: 0 7%;
+    padding-top: 13rem;
+}
+
+.btn{
+    font-size: 2rem;
+    padding: .7rem 3rem;
+    background: var(--green2);
+    color: var(--bg-color1);
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: var(--grey2);
+}
+
+
+/* home css */
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: url(../images/bkg2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    flex-wrap: wrap;
+}
+
+.home .image{
+    flex: 1 1 40rem;
+}
+
+.home .image img{
+    width: 80%;
+    margin-left: 5rem;
+}
+
+.home .content{
+    flex: 1 1 40rem;
+}
+
+.home .content h1{
+    font-size: 6rem;
+    color: var(--black);
+}
+
+.home .content p{
+    font-size: 1.8rem;
+    color: var(--bg-color1);
+    padding: 1rem 0;
+}
+
+
+/* about css */
+/* copy home css and edit */
+
+.about{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+.about .image{
+    flex: 1 1 40rem;
+}
+
+.about .image img{
+    width: 80%;
+    margin-left: 5rem;
+}
+
+.about .content{
+    flex: 1 1 40rem;
+}
+
+.about .content h1{
+    font-size: 6rem;
+    color: var(--black);
+}
+
+.about .content p{
+    font-size: 1.6rem;
+    color: var(--grey2);
+    padding: 1rem 0;
+}
+
+
+/* service css */
+.service{
+    min-height: 100vh;
+    background: var(--bg-color3);
+}
+.service .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+.service .box-container .box{
+    background: var(--bg-color1);
+    margin: 2rem;
+    padding: 1rem;
+    /* aliter */
+    width: 30rem; height: 20rem;
+    text-align: center;
+    box-shadow: var(--box-shadow1);
+}
+.service .box-container .box i{
+    font-size: 4rem;
+    padding: 1rem;
+    color: var(--green2);
+}
+.service .box-container .box h3{
+    font-size: 2rem;
+    color: var(--grey2);
+}
+.service .box-container .box p{
+    font-size: 1.4rem;
+    color: var(--grey);
+    padding: 1rem;
+}
+
+/* plan css */
+/* we reuse some service css code */
+.plan{
+    min-height: 100vh;
+    background: var(--bg-color3);
+}
+.plan .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+.plan .box-container .box{
+    background: var(--bg-color1);
+    margin: 1rem;
+    padding: 2rem;
+    /* aliter */
+    width: 35rem;
+    text-align: center;
+    box-shadow: var(--box-shadow1);
+    box-shadow: var(--box-shadow-inset);
+    position: relative;
+}
+.plan .box-container .box .title{
+    font-size: 3rem;
+    color: var(--grey);
+    /* it put space among h3, class price and button */
+    padding: 1.5rem 0;
+}
+.plan .box-container .box .price{
+    background: var(--green2);
+    color: var(--bg-color1);
+    border-radius: 50%;
+    /* margin, height, width, line height adjust the border radius */
+    margin: 1rem auto;
+    height: 13rem; width: 13rem;
+    line-height: 13rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.plan .box-container .box .price span{
+    font-size: 2.5rem;
+}
+.plan .box-container .box ul li{
+    color: var(--grey);
+    list-style: none;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+
+}
+
+/* contact css */
+.contact{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
+    flex-wrap: wrap;
+}
+.contact form{
+    flex: 1 1 40rem;
+    padding: 2rem;
+    margin: 1rem;
+    margin-top: 4rem;
+    box-shadow: var(--box-shadow1);
+}
+.contact .content{
+    flex: 1 1 40rem;
+    padding: 3rem 1rem;
+}
+.contact form .box{
+    width: 100%;
+    color: var(--grey);
+    height: 4rem;
+    font-size: 1.7rem;
+    padding: 2rem;
+    /* the 0 in margin moves it to the center */
+    margin: .5rem 0; 
+    /* change textbox to line */
+    border-bottom: .2rem solid rgba(0,0,0,.3);
+    text-transform: none;
+}
+.contact form .box::placeholder{
+    text-transform: capitalize;
+}
+.contact form .box::focus{
+    border-color: var(--green2);
+}
+.contact form .message{
+    height: 15rem;
+    resize: none;
+}
+.contact .content h3{
+    font-size: 4rem;
+    color: var(--grey2);    
+}
+.contact .content p{
+    font-size: 1.8rem;
+    color: var(--grey);
+    padding: 1rem 0;   
+}
+.contact .content .icons{
+    font-size: 1.8rem;
+    color: var(--grey);
+    padding: .8rem 0;   
+}
+.contact .content .icons i{
+    padding-right: .6rem;
+    color: var(--green2);
+}
+
+/* footer css */
+.footer{
+    background: var(--black);
+}
+.footer .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer .box-container .box{
+    margin: 2rem;
+    flex: 1 1 30rem;
+}
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color: var(--bg-color1);
+}
+.footer .box-container .box p{
+    font-size: 1.2rem;
+    color: var(--bg-color3);
+    padding: 1rem 0;
+}
+.footer .box-container .box a{
+    font-size: 1.8rem;
+    color: var(--bg-color3);
+    padding: .4rem 0;
+    display: block;
+    text-decoration: none;
+}
+.footer .box-container .box a:hover{
+    text-decoration: underline;
+}
+/* to adjust quick links */
+.footer .box-container .box:nth-child(2){
+    text-align: center;
+}
+.footer .box-container form{
+    display: flex;
+    align-items: center;
+}
+.footer .box-container form input[type="email"]{
+    height: 4.1rem;
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 0 1rem;
+}
+.footer .box-container form .btn{
+    margin-top: 0;
+}
+.footer .box-container form .btn:hover{
+    color: var(--bg-color1);
+    background: var(--red);
+}
+
+.footer .credit{
+    font-size: 2rem;
+    background: var(--black);
+    text-align: center;
+    color: var(--bg-color1);
+    padding: 2rem 1rem;
+    font-weight: normal;
+}
+.footer .credit a{
+    text-decoration: none;
+    color: var(--green2);
+
+}
+
+
+/* media queries */
+@media(max-width:768px){
+    html{
+        font-size: 55%;        
+    }
+    .home .content{
+        text-align: center;
+    }
+    .home .content h1{
+        font-size: 4rem;
+    }
+    .about .content h1{
+        font-size: 4rem;
+    }
+}
+
+
+
+
+
+@media(max-width:500px){
+    html{
+        font-size: 50%;        
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;                
+        padding: 0 1rem;
+    }
+    header #menu{
+        display: block;
+    }
+    header .navbar{
+        position: fixed;
+        /* it shows the drop down menu */
+        /* top: 6.3rem; right: 0%; */
+        /* it hides the drop down menu */
+        top: 6.3rem; right: -120%;
+
+        height: 100%;
+        width: 100%;
+        border-top: .2rem solid rgba(0,0,0,.3);
+    }
+    header .navbar ul{
+        height: 100%; width: 100%;
+        flex-flow: column;
+        background: var(--bg-color1);
+        padding-bottom: 15rem;
+    }
+    header .navbar ul li{
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+    header .navbar ul li a{
+        font-size: 4rem;
+        color: var(--grey);
+        display: block;
+    }
+    header .navbar ul li a:hover{
+        color: var(--green2);
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+    header .navbar.nav-toggle{
+        /* pull out the one hidden with -120% */
+        right: 0;
+    }
+    section{
+        padding-top: 5rem;
+    }
+    .footer .box-container .box:last-child{
+        text-align: center;
+    }
+    .footer .box-container .box:last-child p{
+        font-size: 1.7rem;
+    }
+    .footer .box-container .box:last-child form{
+        flex-flow: column;
+    }
+    .footer .box-container .box:last-child form .btn{
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
