@@ -4,9 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        *{
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            width: 100%;
+            height: auto;
+            background-color: grey;            
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+        }
+        a:hover{
+            color: aqua;
+        }
+        /* header */
+        header{
+            position: relative;
+            padding: 0 2rem;
+            /* reuse code */
+            width: 100%;
+            height: 80vh;
+            background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(images/bkg3.jpg);
+            background-position: center;
+            background-size: cover;            
+        }
+        .navbar{
+            width: 100%; height: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar .logo a{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar .links{
+            display: flex;
+            gap: 2rem;
+        }
+        .navbar .togglebtn{
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            /* to hide hamburger icon */
+            display: none;
+        }
+        .actionbtn{
+            background-color: orange;
+            color: white;
+            padding: .5rem 1rem;
+            border: none; outline: none;
+            border-radius: 20px;
+            font-size: .8rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .actionbtn:hover{
+            color: white;
+            scale: 1.05;
+        }
+        .actionbtn:active{
+            scale: .95;
+        }
+        .actionbtn2{
+            background-color: red;
+            color: white;
+            margin-left: -20rem;
+            padding: .5rem 1rem;
+            border: none; outline: none;
+            border-radius: 20px;
+            font-size: .8rem;
+            font-weight: bold;
+            cursor: pointer;             
+        }
+        /* dropdown menu */
+        .dropdownmenu{
+            position: absolute;
+            right: 2rem;
+            top: 60px;
+            width: 300px;
+            /* height: 300px; */
+            height: 0;
+            background: rgba(255,255,255,.1);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;           
+            overflow: hidden;
+            /* hide dropdown menu */
+            display: none;
+        }
+        .dropdownmenu li{
+            padding: .7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dropdownmenu .actionbtn2{
+            margin-left: 2px;
+            width: 100%;
+            display: flex;
+            /* moves text to the center */
+            justify-content: center;
+        }
+        .dropdownmenu .actionbtn{
+            width: 100%;
+            display: flex;
+            /* moves text to the center */
+            justify-content: center;
+        }
+        .dropdownmenu.open{
+            height: 300px;
+        }
+
+        /* style home */
+        section#home{
+            /* reference value of navbar */
+            height: calc(100vh-60px);
+            margin-top: 15em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            /* i will use this if i place home section outisde the header tag */
+            /* margin-top: -300px;  */
+            
+        }
+        #home h1{
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            /* i will use this if i place home section outisde the header tag */
+            /* edited by ajala */
+            /* z-index: 1;      */
+        }
+        section#home p{
+            color: white;
+            /* z-index: 1; */
+        }
+
+
+
+
+        /* mobile version */
+        @media(max-width:992px){
+            .navbar .links,
+            .navbar .actionbtn,
+            .navbar .actionbtn2{
+                display: none;
+            }
+            .navbar .togglebtn{
+                display: block;
+            }
+            .dropdownmenu{
+                display: block;
+            }
+        }
+
+        @media(max-width:576px){
+            .dropdownmenu{
+                left: 2rem;
+                width: unset;
+            }
+        }
+        
+    </style>
 </head>
 <body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">DMAC</a></div>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="" class="actionbtn">Sign in</a>
+            <a href="" class="actionbtn2">Register</a>
+
+            <!-- use font awesome for hamburger icon -->
+            <div class="togglebtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdownmenu">
+            <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="" class="actionbtn">Sign in</a></li>
+                <li><a href="" class="actionbtn2">Register</a></li>
+        </div>
+
+        <!-- link home begins -->
+    <section id="home">
+        <h1>Welcome Onboard</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis illum hic <br>provident sunt qui earum, possimus doloribus repellat eum vel ipsa. Qui animi ex incidunt. Id quo dolor maxime mollitia.</p>
+    </section>
+
+    </header>
+
+
+    <!-- link for user -->
     <h1>You are welcome to the portfolio of Ajala Theophilus Bamise</h1>
     <a href="home.html">click here to visit the website</a>
+    
+
+    <!-- link for javascript -->
+    <script>
+        const togglebtn = document.querySelector('.togglebtn')
+        const togglebtnicon = document.querySelector('.togglebtn i')
+        const dropdownmenu = document.querySelector('.dropdownmenu')
+
+        togglebtn.onclick = function(){
+            // reference .dropdownmenu.open in css
+            dropdownmenu.classList.toggle('open')
+            const isopen = dropdownmenu.classList.contains('open')
+
+            togglebtnicon.classList = isopen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
 </body>
 </html>
